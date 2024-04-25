@@ -1,0 +1,46 @@
+﻿<Window x:Class="Notepad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notepad"
+        xmlns:lang="clr-namespace:Notepad.Language"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="590" BorderBrush="LightGray" BorderThickness="10">
+    <Grid Margin="20"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="310"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbltitle" Grid.Row="0" Grid.Column="0" FontSize="14"  Height="70" Background="LightGray">
+            <Label.Content>
+                <StackPanel Orientation="Horizontal">
+                 <Image Source="https://e7.pngegg.com/pngimages/836/766/png-clipart-notepad-microsoft-office-microsoft-computer-program-microsoft.png" Width="40"  ></Image>
+                 <AccessText Text="{x:Static lang:Resource.title}" Margin="5" ></AccessText>
+                </StackPanel>
+            </Label.Content>
+        </Label>
+        <Menu Grid.Row="1" Grid.Column="0" Height="30" Background="White" BorderBrush="LightGray" BorderThickness="1">
+            <MenuItem Header="{x:Static lang:Resource.file}" FontSize="12" Height="30">
+                <MenuItem x:Name="menunew" Header="{x:Static lang:Resource._new}" ></MenuItem>
+                <MenuItem x:Name="menunewwin" Header="{x:Static lang:Resource.new_window}" Click="menunewwin_Click" ></MenuItem>
+                <MenuItem x:Name="menuopen" Header="{x:Static lang:Resource.open}" Click="menuopen_Click"></MenuItem>
+                <MenuItem x:Name="menusave" Header="{x:Static lang:Resource.save}" Click="menusave_Click" ></MenuItem>
+                <MenuItem x:Name="menusaveas" Header="{x:Static lang:Resource.save_as}" Click="menusave_Click" ></MenuItem>
+                <MenuItem x:Name="menufile" Header="{x:Static lang:Resource.fileinfo}" Click="menufile_Click"></MenuItem>
+                <MenuItem x:Name="menuDir" Header="{x:Static lang:Resource.Dirinfo}" Click="menuDir_Click" ></MenuItem>
+                <MenuItem x:Name="menuexit" Header="{x:Static lang:Resource.exit}" Click="menuexit_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static lang:Resource.edit}" FontSize="12" Height="30"></MenuItem>
+            <MenuItem Header="{x:Static lang:Resource.format}" FontSize="12" Height="30"></MenuItem>
+            <MenuItem Header="{x:Static lang:Resource.view}"  FontSize="12" Height="30"></MenuItem>
+            <MenuItem Header="{x:Static lang:Resource.help}"  FontSize="12" Height="30"></MenuItem>
+        </Menu>
+        <Frame x:Name="framemain" Width="510" Height="300" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1"></Frame>   
+    </Grid>
+</Window>
